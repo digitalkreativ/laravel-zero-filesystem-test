@@ -1,3 +1,32 @@
+# Purpose
+
+This project tests if the built phar file can write to the current working directory.
+
+Phar files are special files and you can't write new files inside the phar file. If you need to write files from your Laravel zero application you should be writing with absolute paths to a location outside the phar file.
+
+PHP has a built-in function `getcwd()` with which you can get the current working directory.
+
+In this project we will be using this function to write a text file to the current working directory.
+
+Command to run:
+
+## Build the phar file
+
+```
+php laravel-zero-filesystem-test app:build laravel-zero-filesystem-test
+```
+
+## Run the command 
+
+```
+cd ..
+php laravel-zero-filesystem-test/builds/laravel-zero-filesystem-test test
+```
+
+
+# Laravel-Zero
+
+
 <p align="center">
     <img title="Laravel Zero" height="100" src="https://raw.githubusercontent.com/laravel-zero/docs/master/images/logo/laravel-zero-readme.png" />
 </p>
