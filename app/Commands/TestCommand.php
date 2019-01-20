@@ -13,7 +13,7 @@ class TestCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'test';
+    protected $signature = 'test {mode}';
 
     /**
      * The description of the command.
@@ -31,7 +31,7 @@ class TestCommand extends Command
     {
 
         try {
-            $this->info('Write file using just Storage');
+            $this->info('Write file using just Storage ' );
             Storage::put('test-local.txt', 'Test Local ' . time() . PHP_EOL );
         } catch ( \Exception $ex ){
             $this->error( __CLASS__ . ' ' . __FUNCTION__ . ' - ' . $ex->getMessage() );
